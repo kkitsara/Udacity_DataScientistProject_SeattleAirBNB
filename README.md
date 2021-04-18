@@ -6,7 +6,7 @@ LICENSE - The license file
 
 DataScientistProject_Seattle.ipynb - It is the Jupyter Notebook that contains the analysis of the Seattle AirBNB data and the results.
 
-AllTogether.py - It is the python code that contains the definition of some functions used in Jupyter notebook. It should be imported in the notebook
+DataScientistProject_Seattle_Functions.py - It is the python code that contains the definition of some functions used in Jupyter notebook. It should be imported in the notebook
 
 AirBNBSeattleData.7z - The dataset of Seattle AirBNB data that are used for the project
 
@@ -30,7 +30,7 @@ In the Jupyter Notebook you may find the below code:
 
 pandas,numpy,sklearn,matplotlib,seaborn
 
-Also we import a python code named AllTogether
+Also we import a python code named DataScientistProject_Seattle_Functions
 
 2. The code that reads the datasets that are included in the github repository
 
@@ -53,8 +53,8 @@ cancellation policy, per reviews scores and per neighbourhood. All the data were
 Question 2 Result: From the results we were in position to understand if there are correlations or not. The cancellation policy and the neighbourhood affect the 
 average booking count per appartment, while the review scores seems to not be correlated.
 
-Question 3 Methodology: In order to answer the 3rd question "Which are the key indicators of an listing price?", we build a ML model using the linear regression 
-algorythm. First we run the ML model importing the full dataset as is, without removing any column. 
+Question 3 Methodology: In order to answer the 3rd question "Which are the key indicators of an listing price?", we build a linear regression model.
+algorythm. First we run the linear model importing the full dataset as is, without removing any column. 
 
 We used some standard methodologies to handle the numerical and the categorical attributes. Also we handled some more cases such as below:
 A. We removed all the rows that do not have available the price value that we want to predict.
@@ -79,7 +79,13 @@ After performing the above steps and several tests we ended up with a model that
 with the removal of the model of 2 columns that seems to had extremely high importance (edge) and indeed the removal seems to benefit the model. Then we removed
 some more columns based on very low importance.
 
-At the end the final model includes 133 predictors with r square ~0.62.
+At the end the final model includes 133 variable with r square ~0.62.
 
 Question 3 Result: It seems that the most important factors tha affect the price are the property type, the neighbourhood and the room type.
 
+DataScientistProject_Seattle_Functions.py
+In the code there are contained 2 functions that are used in the Jupyter notebook.
+The 2 functions are:
+find_optimal_lm_mod : Runs multipled tests of the X and y datasets and calculates different results in order to find the optimum linear model composition
+
+coef_weights : Exports and depicts the coefficients of the linear model in order to undertand the importance of each variable.
