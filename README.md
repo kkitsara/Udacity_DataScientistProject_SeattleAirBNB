@@ -1,4 +1,4 @@
-In this foler you may find the below files.
+In this folder you may find the below files.
 
 README.md - The file that explains the repository purpose and structure
 
